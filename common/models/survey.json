@@ -1,0 +1,60 @@
+{
+  "name": "survey",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "projectId",
+      "options": {
+        "nestRemoting": true
+      },
+    "staff": {
+        "type": "belongsTo",
+        "model": "staff",
+        "foreignKey": "byWhom"
+    }
+  }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "accessType": "*",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "accessType": "WRITE",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "accessType": "WRITE",
+      "permission": "ALLOW",
+      "property" : "create"
+    },
+    
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "accessType": "READ",
+      "permission": "ALLOW"
+    }
+
+  ],
+  "methods": {}
+}

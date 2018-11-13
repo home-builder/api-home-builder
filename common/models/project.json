@@ -1,0 +1,72 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "required": true
+    },
+    "bedroom": {
+      "type": "number",
+      "required": true
+    },
+    "kitchen": {
+      "type": "number",
+      "required": true
+    },
+    "living_room": {
+      "type": "number",
+      "required": true
+    },
+    "lobby": {
+      "type": "number",
+      "required": true
+    },
+    "toilet": {
+      "type": "number",
+      "required": true
+    },
+    "bath_room": {
+      "type": "number",
+      "required": true
+    },
+    "other": {
+      "type": "object"
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "customer",
+      "foreignKey": "customerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "survey",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

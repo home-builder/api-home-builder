@@ -1,0 +1,40 @@
+{
+  "name": "staff",
+  "base": "User",
+  "idInjection": true,
+  "properties": {},
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": false,
+  "validations": [],
+  "relations": {
+    "surveys":{
+      "type": "hasMany",
+      "model": "survey",
+      "foreignKey": "byWhom"
+    }
+
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__surveys"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__count__surveys"
+    }
+  ],
+  "methods": []
+}

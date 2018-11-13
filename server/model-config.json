@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDs"
+  },
+  "AccessToken": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "category": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "customer": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "product": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "project": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "survey": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "attachment": {
+    "dataSource": "MediaFiles",
+    "public": true
+  },
+  "staff": {
+    "dataSource": "mongoDs",
+    "public": true,
+    "options": {}
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "user",
+    "base": "User",
+    "idInjection": true,
+    "properties": {},
+    "restrictResetPasswordTokenScope": true,
+    "emailVerificationRequired": true,
+    "validations": [],
+    "relations": {
+      "surveys":{
+        "type": "hasMany",
+        "model": "survey",
+        "foreignKey": "byWhom"
+      }
+
+    },
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "accessType": "READ",
+        "permission": "AlLOW"
+      }
+    ],
+    "methods": []
+  }
+  
