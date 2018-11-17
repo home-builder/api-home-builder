@@ -46,6 +46,10 @@
     },
     "note": {
       "type": "string"
+    },
+    "imageDisplay": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

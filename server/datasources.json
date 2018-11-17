@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "mongoDs": {
-    "host": "127.0.0.1",
-    "port": 27017,
+    "host": "ds029901.mlab.com",
+    "port": 29901,
     "url": "",
     "database": "home-builder",
-    "password": "",
+    "password": "homebuilderdev1",
     "name": "mongoDs",
-    "user": "",
+    "user": "home-builder",
     "connector": "mongodb"
   },
   "MediaFiles": {
